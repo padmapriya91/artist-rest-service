@@ -7,19 +7,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Events {
+@Accessors(chain = true)
+public class ArtistResponse {
 
-	private String title;
+	private String name;
 	private Integer id;
-	private String singleStatus;
-	private String timeZone;
-	private String startDate;
-	private List<Id> artists;
-	private Id venue;
-	private Boolean hiddenFromSearch;
+	private String imgSrc;
+	private String url;
+	private Integer rank;
+	private List<EventResponse> events;
+	
 }
