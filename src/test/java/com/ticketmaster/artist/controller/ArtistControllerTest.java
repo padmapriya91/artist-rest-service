@@ -23,7 +23,7 @@ public class ArtistControllerTest {
     HttpHeaders headers = new HttpHeaders();
     
     @Test
-    public void validDeviceID_shouldReturnWith200() {
+    public void validArtistID_shouldReturnWith200() {
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
         ResponseEntity<?> response = restTemplate.exchange(createURLWithPort("/artist/21"), HttpMethod.GET, entity, String.class);
 
@@ -34,7 +34,7 @@ public class ArtistControllerTest {
     }
     
     @Test
-    public void validDeviceID_failWith404() {
+    public void validArtistID_failWith404() {
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
         ResponseEntity<?> response = restTemplate.exchange(createURLWithPort("/artist/2111"), HttpMethod.GET, entity, String.class);
 
@@ -45,7 +45,7 @@ public class ArtistControllerTest {
     }
     
     @Test
-    public void validDeviceID_no_venue_failWith404() {
+    public void validArtistID_no_venue_failWith404() {
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
         ResponseEntity<?> response = restTemplate.exchange(createURLWithPort("/artist/29"), HttpMethod.GET, entity, String.class);
 
